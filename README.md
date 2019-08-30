@@ -9,19 +9,16 @@ Framework checkout
 
 First of all a directory must be created in which the modules can be stored. Then switch to the new directory using the command line and check them out by using the following command:
 
-::
-
+```
    # for git master
    shell> git clone git@github.com:OTRS/otrs.git -b master
    # for a specific branch like OTRS 3.3
    shell> git clone git@github.com:OTRS/otrs.git -b rel-3_3
-               
+```           
 
 Check out the ``module-tools`` module (from GitHub) too, for your development environment. It contains a number of useful tools:
 
-::
-
-   shell> git clone git@github.com:OTRS/module-tools.git
+`shell> git clone git@github.com:OTRS/module-tools.git`
                
 
 Please configure the OTRS system according to the `installation instructions <https://doc.otrs.com/doc/manual/installation/stable/en/index.html>`__.
@@ -32,12 +29,12 @@ Useful Tools
 
 There are two modules that are highly recommended for OTRS development:
 
-- `OTRSCodePolicy <https://github.com/OTRS/otrscodepolicy>`__
-- `Fred <https://github.com/OTRS/Fred>`__
+- [OTRSCodePolicy](https://github.com/OTRS/otrscodepolicy)
+- [Fred](https://github.com/OTRS/Fred>)
 
-*OTRSCodePolicy* is a code quality checker that enforces the use of common coding standards also for the OTRS development team. It is highly recommended to use it if you plan to make contributions. You can use it as a standalone test script or even register it as a git commit hook that runs every time that you create a commit. Please see `the module documentation <https://github.com/OTRS/otrscodepolicy/blob/master/doc/en/OTRSCodePolicy.xml>`__ for details.
+*OTRSCodePolicy* is a code quality checker that enforces the use of common coding standards also for the OTRS development team. It is highly recommended to use it if you plan to make contributions. You can use it as a standalone test script or even register it as a git commit hook that runs every time that you create a commit. Please see [the module documentation](https://github.com/OTRS/otrscodepolicy/blob/master/doc/en/OTRSCodePolicy.xml) for details.
 
-*Fred* is a little development helper module that you can actually install or link (as described below) into your development system. It features several helpful modules that you can activate, such as an SQL logger or an STDERR console. You can find some more details in its `module documentation <https://github.com/OTRS/Fred/blob/master/doc/en/Fred.xml>`__.
+*Fred* is a little development helper module that you can actually install or link (as described below) into your development system. It features several helpful modules that you can activate, such as an SQL logger or an STDERR console. You can find some more details in its [module documentation](https://github.com/OTRS/Fred/blob/master/doc/en/Fred.xml).
 
 By the way, these tools are also open source, and we will be happy about any improvements that you can contribute.
 
@@ -49,9 +46,7 @@ A clear separation between OTRS and the modules is necessary for proper developi
 
 Example: linking the *Calendar* module:
 
-::
-
-   shell> ~/src/module-tools/link.pl ~/src/Calendar/ ~/src/otrs/
+`shell> ~/src/module-tools/link.pl ~/src/Calendar/ ~/src/otrs/`
                
 
 Whenever new files are added, they must be linked as described above.
@@ -60,16 +55,13 @@ As soon as the linking is completed, the system configuration must be rebuilt to
 
 Example:
 
-::
-
+```
    shell> ~/src/otrs/bin/otrs.Console.pl Maint::Config::Rebuild
    shell> ~/src/module-tools/DatabaseInstall.pl -m Calendar.sopm -a install
    shell> ~/src/module-tools/CodeInstall.pl -m Calendar.sopm -a install
-               
+```             
 
 To remove links from OTRS enter the following command:
 
-::
-
-   shell> ~/src/module-tools/remove_links.pl ~/src/otrs/
+`shell> ~/src/module-tools/remove_links.pl ~/src/otrs/`
                
