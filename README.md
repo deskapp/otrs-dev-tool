@@ -1,7 +1,7 @@
 Development Environment
 =======================
 
-To facilitate the writing of OTRS expansion modules, the creation of a development environment is necessary. The source code of OTRS and additional public modules can be found on `GitHub <http://otrs.github.io>`__.
+To facilitate the writing of OTRS expansion modules, the creation of a development environment is necessary. The source code of OTRS and additional public modules can be found on GitHub.
 
 
 Framework checkout
@@ -21,7 +21,7 @@ Check out the ``module-tools`` module (from GitHub) too, for your development en
 `shell> git clone git@github.com:OTRS/module-tools.git`
                
 
-Please configure the OTRS system according to the `installation instructions <https://doc.otrs.com/doc/manual/installation/stable/en/index.html>`__.
+Please configure the OTRS system according to the installation instructions.
 
 
 Useful Tools
